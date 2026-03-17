@@ -14,7 +14,7 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT);
     glLoadIdentity();
     glTranslatef(x, y, 0.0f);
-    glBegin(GL_QUADS);
+    glBegin(GL_TRIANGLE_FAN);
     glColor3f(1.0f, 0.0f, 0.0f);
     for (unsigned short angulo = 0; angulo < 360; angulo++) {
         glVertex2f(sin(angulo) * TAMANHO_CIRCULO, cos(angulo) * TAMANHO_CIRCULO);
