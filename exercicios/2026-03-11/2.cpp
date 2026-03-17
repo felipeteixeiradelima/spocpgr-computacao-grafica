@@ -23,16 +23,16 @@ void display() {
 void keyboard(unsigned char key, int xMouse, int yMouse) {
     switch (key) {
         case 'w':
-            y += step;
+            if (y < 1.0f) y += step;
             break;
         case 's':
-            y -= step;
-            break;
-        case 'a':
-            x -= step;
+            if (y > -1.0f) y -= step;
             break;
         case 'd':
-            x += step;
+            if (x < 1.0f) x += step;
+            break;
+        case 'a':
+            if (x > -1.0f) x -= step;
             break;
         case 27:
             exit(0); // tecla ESC

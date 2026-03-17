@@ -21,21 +21,24 @@ void display() {
 }
 
 void keyboard(unsigned char key, int xMouse, int yMouse) {
+    if (key == 27) exit(0); // tecla ESC
+}
+
+// Função especial
+void keyboardSpecial(int key, int xMouse, int yMouse) {
     switch (key) {
-        case 'w':
+        case GLUT_KEY_UP:
             y += step;
             break;
-        case 's':
+        case GLUT_KEY_DOWN:
             y -= step;
             break;
-        case 'a':
+        case GLUT_KEY_LEFT:
             x -= step;
             break;
-        case 'd':
+        case GLUT_KEY_RIGHT:
             x += step;
             break;
-        case 27:
-            exit(0); // tecla ESC
     }
     glutPostRedisplay(); // Solicita redesenho
 }
@@ -55,6 +58,7 @@ int main(int argc, char** argv) {
     glutCreateWindow("Controle com Teclado - OpenGL");
     init();
     glutDisplayFunc(display);
+    glutSpecialFunc(keyboardSpecial);
     glutKeyboardFunc(keyboard);
     glutMainLoop();
     return 0;

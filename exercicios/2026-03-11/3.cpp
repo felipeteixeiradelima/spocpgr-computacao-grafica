@@ -5,13 +5,18 @@ float x = 0.0f;
 float y = 0.0f;
 float step = 0.1f;
 
+// Cores do quadrado
+float r = 1.0f;
+float g = 0.0f;
+float b = 0.0f;
+
 // Função para desenhar a cena
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
     glLoadIdentity();
     glTranslatef(x, y, 0.0f);
     glBegin(GL_QUADS);
-    glColor3f(1.0f, 0.0f, 0.0f);
+    glColor3f(r, g, b);
     glVertex2f(-0.1f, -0.1f);
     glVertex2f(0.1f, -0.1f);
     glVertex2f(0.1f, 0.1f);
@@ -33,6 +38,21 @@ void keyboard(unsigned char key, int xMouse, int yMouse) {
             break;
         case 'd':
             x += step;
+            break;
+        case '1':
+            r = 1.0f;
+            g = 0.0f;
+            b = 0.0f;
+            break;
+        case '2':
+            r = 0.0f;
+            g = 1.0f;
+            b = 0.0f;
+            break;
+        case '3':
+            r = 0.0f;
+            g = 0.0f;
+            b = 1.0f;
             break;
         case 27:
             exit(0); // tecla ESC

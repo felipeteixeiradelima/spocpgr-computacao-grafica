@@ -1,6 +1,10 @@
 #include <GL/glut.h>
+#include <math.h>
 
-// Posição do quadrado
+// Tamanho do círculo
+const float TAMANHO_CIRCULO = 0.1f;
+
+// Posição do círculo
 float x = 0.0f;
 float y = 0.0f;
 float step = 0.1f;
@@ -12,10 +16,9 @@ void display() {
     glTranslatef(x, y, 0.0f);
     glBegin(GL_QUADS);
     glColor3f(1.0f, 0.0f, 0.0f);
-    glVertex2f(-0.1f, -0.1f);
-    glVertex2f(0.1f, -0.1f);
-    glVertex2f(0.1f, 0.1f);
-    glVertex2f(-0.1f, 0.1f);
+    for (unsigned short angulo = 0; angulo < 360; angulo++) {
+        glVertex2f(sin(angulo) * TAMANHO_CIRCULO, cos(angulo) * TAMANHO_CIRCULO);
+    }
     glEnd();
     glutSwapBuffers();
 }

@@ -40,8 +40,8 @@
 # debug information files
 *.dwo
 
-# editorconfig (C++ formatter)
-.editorconfig
+# Windows
+tasksWindows.json
 
 # outputs
 outputs/
