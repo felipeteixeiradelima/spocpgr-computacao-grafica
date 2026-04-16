@@ -2,7 +2,7 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++: g++ arquivo de build ativo",
+            "label": "C/C++: g++ arquivo de build ativo (OPENGL - LINUX)",
             "command": "g++",
             "args": [
                 "-fdiagnostics-color=always",
@@ -11,6 +11,32 @@
                 "-lGL",
                 "-lglut",
                 "-lGLU",
+                "-o",
+                "${workspaceFolder}/outputs/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tarefa gerada pelo Depurador."
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ arquivo de build ativo (OPENGL - WINDOWS)",
+            "command": "g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-lopengl32",
+                "-lfreeglut",
+                "-lglu32",
                 "-o",
                 "${workspaceFolder}/outputs/${fileBasenameNoExtension}"
             ],
